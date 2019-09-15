@@ -1,7 +1,7 @@
 <?php
 return [
-	'baseUrl' => 'http://cms',
-	'defaultLang' => 'english',
-	'defaultTimeZone' => 'America/Chicago',
+	'baseUrl' => '',
+	'defaultLang' => '',
+	'defaultTimeZone' => '',
 	'defaultTheme' => 'default'
 ];

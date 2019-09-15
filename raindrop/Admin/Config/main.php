@@ -1,5 +1,5 @@
 <?php
 
 return [
-	'baseUrl' => 'http://cms'
+	'baseUrl' => ''
 ];
