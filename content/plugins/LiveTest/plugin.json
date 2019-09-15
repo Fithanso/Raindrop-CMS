@@ -1,0 +1,10 @@
+{
+  "name": "LiveTest plugin for Raindrop CMS",
+  "description": "LiveTest plugin for Raindrop CMS",
+  "directory": "LiveTest",
+  "version": "1.0",
+  "author": "Matthew",
+  "options": {
+    "responseFile": "LiveTest"
+  }
+}
