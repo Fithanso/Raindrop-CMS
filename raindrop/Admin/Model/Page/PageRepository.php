@@ -6,7 +6,7 @@ use Raindrop\Model;
 
 class PageRepository extends Model{
 
-	public function getPages() {
+	public function getAll() {
 		$sql = $this->queryBuilder->select()
 			->from('page')
 			->orderBy('id', 'DESC')

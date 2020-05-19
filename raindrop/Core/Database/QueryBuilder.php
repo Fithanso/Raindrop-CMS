@@ -71,12 +71,13 @@ class QueryBuilder
 	}
 
 	/**
-	 * @param $number
+	 * @param $start
+	 * @param $finish
 	 * @return $this
 	 */
-	public function limit($number)
+	public function limit($start, $finish)
 	{
-		$this->sql['limit'] = " LIMIT {$number}";
+		$this->sql['limit'] = " LIMIT {$start}, {$finish}";
 
 		return $this;
 	}

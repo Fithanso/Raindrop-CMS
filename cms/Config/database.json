@@ -1,0 +1,8 @@
+{
+	"host" : "localhost",
+	"db_name" : "cms",
+	"username" : "root",
+	"password" : "qwerty",
+	"charset" : "utf8"
+
+}

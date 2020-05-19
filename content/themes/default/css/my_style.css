@@ -1,0 +1,13 @@
+#pg-controls>a {
+    margin: 0 8px 0 8px;
+}
+
+.pg-arrow, .pg-arrow-big {
+    background-color: rgba(238,139,41,0.98);
+    padding: 0px 5px 0px 5px;
+    border-radius: 3px;
+}
+
+.pg-arrow:hover, .pg-arrow-big:hover {
+    text-decoration: none;
+}

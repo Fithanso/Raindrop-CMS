@@ -39,12 +39,13 @@ class UrlDispatcher {
 	 * @param $pattern
 	 * @param $controller
 	 */
-	public function register($method, $pattern, $controller) {
-
+	public function register($method, $pattern, $controller, $plugin) {
 
 		$convert = $this->convertPattern($pattern);
-		$this->routes[strtoupper($method)][$convert] = $controller;
 
+		$controller = $controller.':'.$plugin; // set marker - if the route was added by a plugin
+
+		$this->routes[strtoupper($method)][$convert] = $controller;
 	}
 
 	/**
@@ -63,7 +64,7 @@ class UrlDispatcher {
 	}
 
 	/**
-	 * В функции заменяем херь с паттерна на рег. выр.
+	 * В функции заменяем фигню с паттерна на регулярное выражение
 	 * @param $matches
 	 *
 	 * @return string
@@ -96,6 +97,7 @@ class UrlDispatcher {
 		$routes = $this->routes(strtoupper($method));// получить все роуты метода(POST/GET)
 
 		if(array_key_exists($uri, $routes)) {// если в роутах есть конкретная запись путя, не рег. выр.
+			//print_r($routes[$uri]);
 			return new DispatchedRoute($routes[$uri]);
 		}
 

@@ -1,13 +1,19 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Fithanso
+ * Date: 23.04.2020
+ * Time: 14:58
+ */
 
 namespace Cms\Classes;
 
 /**
- * Class Page gives nice data representation to be used in templates with aliases
+ * Class Post gives nice data representation to be used in templates with aliases
  * @package Cms\Classes
  */
-class Page {
 
+class Post {
 	public static $store;
 
 	public static function setStore($store){

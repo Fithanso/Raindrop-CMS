@@ -45,7 +45,7 @@ var page = {
             },
             success: function(result){
                 window.location.reload();
-                //console.log(result);
+
             }
         });
     },

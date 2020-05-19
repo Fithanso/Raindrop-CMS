@@ -9,7 +9,7 @@ class PostController extends AdminController {
 
 		$this->model = $this->load->model('Post');
 
-		$this->data['posts'] = $this->model->post->getPosts();
+		$this->data['posts'] = $this->model->post->getAll();
 
 		$this->view->render('posts/list', $this->data);
 	}
@@ -26,6 +26,8 @@ class PostController extends AdminController {
 
 		$this->model = $this->load->model('Post');
 
+		$this->data['baseUrl'] = \Raindrop\Core\Config\Config::item('baseUrl');
+
 		$this->data['post'] = $this->model->post->getPostData($id);
 
 		$this->view->render('posts/edit', $this->data);
@@ -37,10 +39,9 @@ class PostController extends AdminController {
 
 		$params = $this->request->post;
 
-
 		if(isset($params['title'])) {
-			$pageId = $this->model->post->createPost($params);
-			echo $pageId;
+			$id = $this->model->post->createPost( $params );
+			echo $id;
 		}
 
 	}
@@ -51,8 +52,18 @@ class PostController extends AdminController {
 		$this->model = $this->load->model('Post');
 
 		if(isset($params['title'])) {
-			$pageId = $this->model->post->updatePost($params);
-			echo $pageId;
+			$this->model->post->updatePost($params);
 		}
+
+	}
+
+	public function delete(){
+
+		$this->model = $this->load->model('Post');
+
+		$params = $this->request->post;
+
+		$this->model->post->deletePost($params);
+
 	}
 }

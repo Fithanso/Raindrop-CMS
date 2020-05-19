@@ -11,7 +11,7 @@ class SettingRepository extends Model {
 	/**
 	 * @return object
 	 */
-	public function getSettings() {
+	public function getAll() {
 
 		$sql = $this->queryBuilder->select()
 		                            ->from('setting')

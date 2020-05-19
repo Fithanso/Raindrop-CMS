@@ -6,7 +6,7 @@ use Raindrop\Model;
 
 class PostRepository extends Model{
 
-	public function getPosts() {
+	public function getAll() {
 		$sql = $this->queryBuilder->select()
 		                          ->from('post')
 		                          ->orderBy('id', 'DESC')
@@ -29,8 +29,25 @@ class PostRepository extends Model{
 			$post = new Post($params['post_id']);
 			$post->setTitle($params['title']);
 			$post->setContent($params['content']);
+			$post->setStatus($params['status']);
+			$post->setType($params['type']);
 			$postId = $post->save();
 			return $postId;
+		}
+
+	}
+
+	public function deletePost($params) {
+
+		if(isset($params['post_id'])) {
+
+			$sql = $this->queryBuilder
+				->delete()
+				->from('post')
+				->where('id', $params['post_id'])
+				->sql();
+
+			return $this->db->query($sql);
 		}
 
 	}

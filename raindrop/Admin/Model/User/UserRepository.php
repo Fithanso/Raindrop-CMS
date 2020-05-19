@@ -15,7 +15,7 @@ class UserRepository extends Model{
 		return $this->db->query($sql);
 	}
 
-	public function getUsers($role = 'user', $banned = '0') {
+	public function getAll($role = 'user', $banned = '0') {
 		$sql = $this->queryBuilder->select()
 			->from('user')
 			->where('role',$role)

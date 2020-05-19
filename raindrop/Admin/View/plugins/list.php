@@ -40,7 +40,7 @@
 								<?php else: ?>
 
                                     <a href="javascript:void(0)" onclick="plugin.install(this, '<?php echo $directory ?>')">
-	                                    <?= $lang->dashboardMain['plugins_description']?>
+	                                    <?= $lang->dashboardMain['plugins_install']?>
 									</a>
 								<?php endif;?>
 							</td>

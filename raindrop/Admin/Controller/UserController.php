@@ -8,7 +8,7 @@ class UserController extends AdminController {
 		$this->model = $this->load->model('User');
 		$this->load->language('dashboard/main');
 
-		$this->data['users'] = $this->model->user->getUsers();
+		$this->data['users'] = $this->model->user->getAll();
 
 
 		$this->view->render('users/list_all', $this->data);
@@ -20,7 +20,7 @@ class UserController extends AdminController {
 		$this->model = $this->load->model('User');
 		$this->load->language('dashboard/main');
 
-		$this->data['users'] = $this->model->user->getUsers('admin');
+		$this->data['users'] = $this->model->user->getAll('admin');
 		$this->view->render('users/list_admins', $this->data);
 	}
 

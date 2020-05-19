@@ -4,6 +4,7 @@ namespace Cms\Controller;
 
 use Raindrop\Admin\Model\Page\PageRepository;
 use Cms\Classes\Page;
+use Raindrop\Core\Template\Setting;
 
 class_alias('Cms\\Classes\\Page', 'Page');
 
@@ -35,12 +36,14 @@ class PageController extends CmsController {
 
 		$template = 'page';
 
+		# allows to change templates according to the page's meaning in page's settings
 		if($page->type !== 'page') {
 			$template = sprintf(self::TEMPLATE_PAGE_MASK, $page->type);
 		}
 
+		$data['menu_id'] = Setting::get('index_menu');
 		Page::setStore($page);
 
-		$this->view->render($template);
+		$this->view->render($template, $data);
 	}
 }

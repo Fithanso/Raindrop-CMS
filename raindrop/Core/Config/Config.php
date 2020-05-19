@@ -47,12 +47,14 @@ class Config
      */
     public static function file($group = 'main')
     {
-        $path = path('config') . DIRECTORY_SEPARATOR . $group . '.php';
+        $path = path('config') . DIRECTORY_SEPARATOR . $group . '.json';
 
         // Check that the file exists before we attempt to load it.
         if (file_exists($path)) {
             // Get items from the file.
-            $items = include $path;
+	        $json = file_get_contents($path);
+	        $d = json_decode($json);
+	        $items = json_decode(json_encode($d), true);
 
             // Items must be an array.
             if (is_array($items)) {

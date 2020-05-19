@@ -1,6 +1,6 @@
 <?php
 
-namespace Raindrop\Admin\Model\Plugin;
+namespace Cms\Model\Plugin;
 
 use Raindrop\Model;
 
@@ -9,7 +9,7 @@ class PluginRepository extends Model{
 	/**
 	 * @return object
 	 */
-	public function getAll() {
+	public function getPlugins() {
 		$sql = $this->queryBuilder
 			->select()
 			->from('plugin')

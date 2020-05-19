@@ -3,6 +3,7 @@
 namespace Raindrop\Helper;
 
 use PHPMailer\PHPMailer;
+use Raindrop\Load;
 
 class Common {
 
@@ -61,7 +62,7 @@ class Common {
 			$mail->Host       = 'smtp.gmail.com';
 			$mail->SMTPAuth   = true;
 			$mail->Username   = 'raindropmail1@gmail.com';
-			$mail->Password   = 'radicalsun123';
+			$mail->Password   = 'scubastar123';
 			$mail->SMTPSecure = 'tls';
 			$mail->Port       = 587;
 			$mail->CharSet    = 'UTF-8';

@@ -8,7 +8,7 @@ class PageController extends AdminController {
 
 		$this->model = $this->load->model('Page');
 
-		$this->data['pages'] = $this->model->page->getPages();
+		$this->data['pages'] = $this->model->page->getAll();
 		$this->data['lang'] = $this->di->get('lang');
 
 		$this->view->render('pages/list', $this->data);
@@ -41,8 +41,8 @@ class PageController extends AdminController {
 
 
 		if(isset($params['title'])) {
-			$pageId = $this->model->page->createPage($params);
-			echo $pageId;
+			$id = $this->model->page->createPage($params);
+			echo $id;
 		}
 
 	}
@@ -53,7 +53,7 @@ class PageController extends AdminController {
 		$this->model = $this->load->model('Page');
 
 		if(isset($params['title'])) {
-			$pageId = $this->model->page->updatePage($params);
+			$this->model->page->updatePage($params);
 		}
 	}
 
@@ -65,8 +65,7 @@ class PageController extends AdminController {
 
 
 		if(isset($params['page_id'])) {
-			$pageId = $this->model->page->deletePage($params);
-			echo $pageId;
+			$this->model->page->deletePage($params);
 		}
 
 	}

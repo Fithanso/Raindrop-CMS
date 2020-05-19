@@ -9,7 +9,8 @@ class PluginController extends AdminController {
 
 		$this->model = $this->load->model('Plugin');
 
-		$installedPlugins = $this->model->plugin->getPlugins();
+		$installedPlugins = $this->model->plugin->getAll();
+
 		$plugins = getPlugins();
 
 		foreach($installedPlugins as $key => $plugin) {//сделать директорию плагина ключом в массиве
@@ -18,7 +19,7 @@ class PluginController extends AdminController {
 		}
 
 		foreach($plugins as $key => $plugin) {
-			//если в установленных есть плагин
+			//if there are any installed plugins
 
 
 			if(isset($installedPlugins[$key])) {

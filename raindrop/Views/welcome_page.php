@@ -12,7 +12,7 @@
 
 	<style>
 		body{
-			height: 100vh;
+			height: 94vh;
 			background: rgb(2,0,36);
 			background: linear-gradient(121deg, rgba(2,0,36,1) 3%, rgba(9,9,121,0.9836309523809523) 50%, rgba(0,212,255,1) 99%);
 		}
@@ -43,7 +43,7 @@
 		}
 
 		h3 {
-			color: rgba(132, 131, 138, 0.98);
+			color: rgba(238, 233, 237, 0.98);
 		}
 
 		a{
@@ -88,17 +88,6 @@
             letter-spacing: 1px;
         }
 
-        #loader {
-            top: -50%;
-            left: -50%;
-            position: relative;
-            display: block;
-            width: 333px;
-            height: 26px;
-            background: url('pl.gif');
-
-        }
-
 
 
 	</style>
@@ -106,6 +95,7 @@
     <script>
 
         var ajax = {
+
             ajaxMethod: 'POST',
 
             createAdmin: function () {
@@ -133,7 +123,7 @@
                         type: this.ajaxMethod,
                         data: ({'email': email, 'password': password, 'login': login}),
                         beforeSend: function () {
-                            $('#loader').show();
+                            $('#button').hide();
 
                         },
                         success: function (result) {
@@ -157,13 +147,12 @@
 
     <form id="adminForm" method="post">
         <input name="admin_login" placeholder="Login" type="text" required><br>
-        <input name="admin_password" placeholder="Password" type="password" required><br>
         <input name="admin_email" placeholder="Email" type="email" required><br>
+        <input name="admin_password" placeholder="Password" type="password" required><br>
 
 
-        <div id="loader"></div>
-        <button type="submit" onclick="ajax.createAdmin()">Configure database</button>
-        <!--<input class="submit" type="submit">-->
+
+        <button id="button" type="submit" onclick="ajax.createAdmin()">Configure database</button>
 
     </form>
 

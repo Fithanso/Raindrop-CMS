@@ -150,27 +150,38 @@ function getPlugins() {
 	global $di;
 
 	$pluginsPath = path_content('plugins');
-	$list = scandir($pluginsPath);
 	$plugins = [];
+	$envs = ['Admin', 'Cms'];
 
-	if(!empty($list)) {
-		unset($list[0]);
-		unset($list[1]);
+	foreach($envs as $env) {
+		$list = scandir($pluginsPath.'\\'.$env);
 
-		foreach($list as $namePlugin) {
+		if(!empty($list)) {
+			unset($list[0]);
+			unset($list[1]);
 
-			$namespace = '\\Plugin\\' . $namePlugin . '\\Plugin';
+			foreach($list as $namePlugin) {
 
-			if(class_exists($namespace)) {
-				$plugin = new $namespace($di);
-				$plugins[$namePlugin] = $plugin->details();
+				$namespace = '\\Plugin\\' . $env . '\\' . $namePlugin . '\\Plugin';
+				if(class_exists($namespace)) {
+					$plugin = new $namespace($di);
+					$plugins[$namePlugin] = $plugin->details();
+				}
 			}
-		}
 
+		}
 	}
+
 	return $plugins;
 }
 
+/**
+ * Function searches for files like this: "page-first-type", "page-second-type".
+ * So, we can apply many templates(types) for data we want to display
+ * @param string $switch
+ *
+ * @return array
+ */
 function getTypes($switch = 'page') {
 
 	$themePath = path_content('themes') . '/' . \Setting::get('active_theme');

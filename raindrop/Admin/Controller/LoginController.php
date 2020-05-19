@@ -12,6 +12,7 @@ use Raindrop\Controller;
 use Raindrop\DI\DI;
 use Raindrop\Core\Auth\Auth;
 use Raindrop\Core\Database\QueryBuilder;
+use Raindrop\Helper\Cookie;
 
 class LoginController extends Controller {
 
@@ -40,6 +41,7 @@ class LoginController extends Controller {
 		}
 
 		$this->view->render( 'login' );
+
 	}
 
 	public function authAdmin() {

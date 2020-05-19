@@ -10,7 +10,7 @@ class SettingController extends AdminController
     {
 
         $this->model = $this->load->model('Setting');
-        $this->data['settings']  = $this->model->setting->getSettings();
+        $this->data['settings']  = $this->model->setting->getAll();
 
         $this->data['languages'] = languages();
 

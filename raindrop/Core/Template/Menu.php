@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Fithanso
- * Date: 24.06.2019
- * Time: 12:20
- */
 
 namespace Raindrop\Core\Template;
 

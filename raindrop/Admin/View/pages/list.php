@@ -24,13 +24,11 @@
                 <tr>
 
                     <th scope="row">
-                        <?= $page->id ?>
+                        <a href="/admin/pages/edit/<?=$page->id?>" class="page-name"><?= $page->id ?> </a>
                     </th>
 
                     <td>
-                        <a href="/admin/pages/edit/<?=$page->id?>" class="page-name">
-                            <?= $page->title ?>
-                        </a>
+                        <a href="/admin/pages/edit/<?=$page->id?>" class="page-name"><?= $page->title ?></a>
                     </td>
 
                     <td>

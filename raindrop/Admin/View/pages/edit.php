@@ -31,10 +31,7 @@
 				</div>
 				<div class="col-3">
 					<div>
-						<!--<p>Update this page</p>
-						<button type="submit" class="btn btn-primary" onclick="page.update()">
-							Update
-						</button>-->
+
                         <div class="container page-upd-btn">
                             <button type="submit" class="btn btn-primary upd-btn" onclick="page.update(this)">
 	                            <?= $lang->dashboardMain['pages_edit_update']?>

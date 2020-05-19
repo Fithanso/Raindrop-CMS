@@ -2,6 +2,7 @@
 
 <main>
     <div class="container">
+
         <div class="row">
             <div class="col page-title">
                 <h3><?= $lang->dashboardMain['settings_settings']?></h3>
@@ -32,7 +33,7 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
-	                            <?php if($setting->description != ''):?>
+	                            <?php if($setting->description == '1'):?>
                                     <span class="setting-description">
                                         <?=$lang->dashboardMain['settings_'.$setting->key_field.'_desc']?>
                                     </span>
@@ -51,7 +52,7 @@
                                             <option value="0"<?php if($setting->value == '0'):?> selected<?php endif;?>><?=$lang->dashboardMain['settings_no']?></option>
                                         </select>
                                     </div>
-	                                <?php if($setting->description != ''):?>
+	                                <?php if($setting->description == '1'):?>
                                         <span class="setting-description">
                                             <?=$lang->dashboardMain['settings_'.$setting->key_field.'_desc']?>
                                         </span>
@@ -67,7 +68,7 @@
                                 <div class="col-10">
                                     <input class="form-control input-write" type="text" name="<?= $setting->key_field ?>" value="<?= $setting->value ?>" id="formNameSite">
                                 </div>
-                                <?php if($setting->description != ''):?>
+                                <?php if($setting->description == '1'):?>
                                     <span class="setting-description">
                                         <?=$lang->dashboardMain['settings_'.$setting->key_field.'_desc']?>
                                     </span>

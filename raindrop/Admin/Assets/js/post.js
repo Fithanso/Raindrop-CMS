@@ -18,7 +18,6 @@ var post = {
 
             },
             success: function(result){
-
                 window.location = '/admin/posts/edit/'+result;
             }
         });
@@ -29,6 +28,8 @@ var post = {
         formData.append('post_id', $('#formPostId').val());
         formData.append('title', $('#formTitle').val());
         formData.append('content', $('.redactor-editor').html());
+        formData.append('status', $('#status').val());
+        formData.append('type', $('#type').val());
 
         $.ajax({
             url: '/admin/post/update/',
@@ -41,7 +42,32 @@ var post = {
 
             },
             success: function(result){
+                window.location.reload();
+            }
+        });
+    },
+    delete: function() {
 
+        if(!confirm('Delete the post?')) {
+            return false;
+        }
+
+        var formData = new FormData();
+
+        formData.append('post_id', $('#formPostId').val());
+
+        $.ajax({
+            url: '/admin/post/delete/',
+            type: this.ajaxMethod,
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            beforeSend: function(){
+
+            },
+            success: function(result){
+                window.location.replace("/admin/posts/");
             }
         });
     }

@@ -1,5 +1,6 @@
 <?php
 //Add css files
+Asset::css('css/my_style');
 Asset::css('vendor/bootstrap/css/bootstrap.min');
 Asset::css('css/clean-blog.min');
 Asset::css('vendor/font-awesome/css/font-awesome.min');

@@ -4,6 +4,11 @@ namespace Raindrop;
 
 use Raindrop\Core\Template\Setting;
 
+/**
+ * Class Load is used in some places to load a class of model and a class of its repository, which allows to operate with
+ * model's low-level getters and setters and to do other stuff.
+ * @package Raindrop
+ */
 class Load
 {
 	const MASK_MODEL_ENTITY     = '\%s\Model\%s\%s';
@@ -41,7 +46,6 @@ class Load
 			self::MASK_MODEL_REPOSITORY,
 			$env, $modelDir, $modelName
 		);
-
 
 		$isClassModel = class_exists($namespaceModel);
 

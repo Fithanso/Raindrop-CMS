@@ -23,7 +23,7 @@
                 <?php foreach($posts as $post): ?>
                 <tr>
                     <th scope="row">
-                        <?= $post->id ?>
+                        <a href="/admin/posts/edit/<?=$post->id?>" class="post-name"><?= $post->id ?></a>
                     </th>
 
                     <td>
