@@ -2,7 +2,7 @@
 CMS can be activated by going to the home page (http://site_name).
 A welcome page will appear. Insert e-mail, nickname and password that will be used by administrator and hit the button.
 SQL queries will be configured and applied with settings and admin's data.
-Make sure that file sys_data.ini must be empty before the system launch.
+Make sure that in cms/Config/main.json object "active" must be "0".
 Any questions: fms160602@gmail.com
 
 
